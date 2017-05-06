@@ -22,10 +22,14 @@
 <script language=JavaScript>
 
 function doBrony(id) {
-   alert("Необходимо быть зарегистрированным пользователем!") ;
-   //document.mainform.page.value="brony" ;
-   //document.mainform.selid.value=id ;
-   //document.mainform.submit() ;
+   if ("{USER_ID}"=="") {
+     alert("Необходимо быть зарегистрированным пользователем!") ;
+   }
+   else {
+     document.mainform.page.value="reserve" ;
+     document.mainform.selid.value=id ;
+     document.mainform.submit() ;
+   }
 }
 
 function doFilter() {

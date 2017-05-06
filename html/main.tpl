@@ -21,7 +21,10 @@
 <table border=0 cellPadding=0 cellSpacing=0 width=800px>
 <tr>
 <td align=center>
-<b><font color=#404040 style="font-size:20px">Добро пожаловать, {USERNAME}</font></b>
+<b><font color=#404040 style="font-size:20px">Добро пожаловать, {USERNAME}</font></b> &nbsp;&nbsp;|&nbsp;&nbsp;
+<a style="display:{AUTHIN}" href="javascript:goAuth()">Авторизоваться</a>
+<a style="display:{NOAUTHIN}" href="javascript:doLogout()">Выйти</a>
+<span style="display:{NOAUTHIN}"><br>Лицевой счет: {SUM} руб.</span>
 </td>
 </tr>
 
@@ -30,6 +33,8 @@
 <hr>
 <a href="javascript:goMain()">Главная</a> &nbsp;&nbsp;|&nbsp;&nbsp;
 <a href="javascript:goRooms()">Подбор объектов</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="javascript:goReg()">Регистрация</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+<a style="display:{NOAUTHIN}" href="javascript:goBill()">Лицевой счет</a> &nbsp;&nbsp;|&nbsp;&nbsp;
 <a href="javascript:goAbout()">О портале</a>
 <hr>
 </td>
@@ -58,6 +63,21 @@ function goRooms() {
 
 function goAbout() {
    document.mainform.page.value="about" ;
+   document.mainform.submit() ;
+}
+
+function goReg() {
+   document.mainform.page.value="reg" ;
+   document.mainform.submit() ;
+}
+
+function goAuth() {
+   document.mainform.page.value="auth" ;
+   document.mainform.submit() ;
+}
+
+function goBill() {
+   document.mainform.page.value="bill" ;
    document.mainform.submit() ;
 }
 

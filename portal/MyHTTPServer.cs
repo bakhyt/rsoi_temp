@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Portal
 {
-    // Реализация Http-сервера 
+    // Реализация Http-сервера для чата
     public class MyHttpServer : HttpServer
     {
         public MyHttpServer(int port)
@@ -54,7 +54,7 @@ namespace Portal
                 if (p.httpHeaders["Cookie"] != null) parseCookie(pc._cookie,p.httpHeaders["Cookie"].ToString());
                 if (p.http_url.IndexOf('?') != -1) parseGet(pc._get,p.http_url.Substring(p.http_url.IndexOf('?') + 1));
 
-                // Получаем страницу
+                // Получаем страницу от портала
                 Template html = pc.getResult() ;
 
                 // Выводим её в результат
@@ -65,7 +65,7 @@ namespace Portal
             catch (Exception e)
             {
                 p.writeSuccess();
-                p.outputStream.WriteLine("Error in chat app:<br><b>"+e.Message+"</b>");
+                p.outputStream.WriteLine("Error in portal app:<br><b>"+e.Message+"</b>");
             }
 
         }

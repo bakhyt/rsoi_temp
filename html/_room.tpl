@@ -6,5 +6,8 @@
 <td>{PRICE} р/месяц</td>
 <td>{S} кв.м</td>
 <td>{ELITE}</td>
-<td><a href="javascript:doBrony({ID})">забронировать</a></td>
+<td>
+<a style="display:{RESERVED}" href="javascript:doBrony({ID})">забронировать</a>
+<span style="display:{NORESERVED}">забронировано</span>
+</td>
 </tr>

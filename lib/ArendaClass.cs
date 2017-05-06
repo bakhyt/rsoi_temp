@@ -57,6 +57,7 @@ namespace ArendaRESTLib
         public ArendaService()
         {
             XDocument doc = XDocument.Load(DATAFILE);
+            //Console.WriteLine("created");
 
             store = new List<ArendaItem>();
             
@@ -74,6 +75,23 @@ namespace ArendaRESTLib
             }
 
             
+            /*   
+            ArendaItem item = new ArendaItem();
+            item.address = "1111";
+            item.elite = true;
+            item.id = "1";
+            store.Add(item);
+             item = new ArendaItem();
+            item.address = "222";
+            item.elite = true;
+            item.id = "2";
+            store.Add(item);
+             item = new ArendaItem();
+            item.address = "333";
+            item.elite = true;
+            item.id = "3";
+            store.Add(item);
+             */
         }
         public ArendaItem GetItemByID(string id)
         {
